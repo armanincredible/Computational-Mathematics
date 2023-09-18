@@ -24,9 +24,9 @@ def get_dependency(approx_derivative, derivative, testing_function):
     x = []
     y = []
     for i in range(MaxPowerOfDelta):
-        x.append(i + 1)
-        y.append(abs(approx_derivative(ConstantX, get_delta_from_pow(i + 1), testing_function) - 
-                    derivative(ConstantX)))
+        x.append(math.log(i + 1))
+        y.append(math.log(abs(approx_derivative(ConstantX, get_delta_from_pow(i + 1), testing_function) - 
+                    derivative(ConstantX))))
     return x, y
 
 def get_depend_n_plt_it(approx_derivative, derivative, testing_function, iteration, axis):
