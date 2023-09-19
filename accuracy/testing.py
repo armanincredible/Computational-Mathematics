@@ -24,7 +24,7 @@ def get_dependency(approx_derivative, derivative, testing_function):
     x = []
     y = []
     for i in range(MaxPowerOfDelta):
-        x.append(math.log(i + 1))
+        x.append(math.log(get_delta_from_pow(i + 1)))
         y.append(math.log(abs(approx_derivative(ConstantX, get_delta_from_pow(i + 1), testing_function) - 
                     derivative(ConstantX))))
     return x, y
@@ -33,6 +33,7 @@ def get_depend_n_plt_it(approx_derivative, derivative, testing_function, iterati
     x, y = get_dependency(approx_derivative, derivative, testing_function)
     plt.plot(x, y, label = "approx function " + str(iteration + 1))
 
+print(get_delta_from_pow(MaxPowerOfDelta))
 for i in range(len(MainFunctions)):
     plt.figure(figsize=(15, 15))
     main_func = MainFunctions[i]
