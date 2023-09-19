@@ -5,7 +5,7 @@ import accuracy as acc
 import functions as fcs
 
 MaxPowerOfDelta = 21
-ConstantX = math.pi * 3 / 2
+ConstantX = 10
 
 ApproxDerivativeFunctions = [acc.approx_derivative1, acc.approx_derivative2, 
                              acc.approx_derivative3, acc.approx_derivative4, 
@@ -29,17 +29,16 @@ def get_dependency(approx_derivative, derivative, testing_function):
                     derivative(ConstantX))))
     return x, y
 
-def get_depend_n_plt_it(approx_derivative, derivative, testing_function, iteration, axis):
+def get_depend_n_plt_it(approx_derivative, derivative, testing_function, iteration):
     x, y = get_dependency(approx_derivative, derivative, testing_function)
-    axis[iteration].plot(x, y)
-    axis[iteration].set_title('approx function ' + str(iteration + 1))
+    plt.plot(x, y, label = "approx function " + str(iteration + 1))
 
 for i in range(len(MainFunctions)):
-    figure, axis = plt.subplots(len(ApproxDerivativeFunctions))
-    figure.set_figwidth(15)
-    figure.set_figheight(15)
+    plt.figure(figsize=(15, 15))
     main_func = MainFunctions[i]
     for j in range(len(ApproxDerivativeFunctions)):
-        get_depend_n_plt_it(ApproxDerivativeFunctions[j], MainDerivativeFunctions[i], MainFunctions[i], j, axis)
+        get_depend_n_plt_it(ApproxDerivativeFunctions[j], MainDerivativeFunctions[i], MainFunctions[i], j)
     #plt.title(label = "main function " + str(i + 1), fontsize=40, loc='right')
+    plt.legend()
+    plt.title("look at function " + str(i + 1))
     plt.show()
