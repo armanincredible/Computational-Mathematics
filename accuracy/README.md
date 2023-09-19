@@ -22,15 +22,15 @@
 Первые две функции при разложении в ряд Тейлора дают остаток $(O(h))$, когда начиная с третьей порядок начинает увеличиваться на единицу, то есть $(O(h^n))$
 Посмотрим на получивишийся график для первой и последней дифференцируемой функции:
 <div class="img-div">
-  <img src="https://github.com/armanincredible/Computational-Mathematics/blob/master/accuracy/pics/function1.png" width="450" alt="">
-  <img src="https://github.com/armanincredible/Computational-Mathematics/blob/master/accuracy/pics/function5.png" width="450" alt="">
+  <img src="https://github.com/armanincredible/Computational-Mathematics/blob/master/accuracy/pics/pic1.png" width="450" alt="">
+  <img src="https://github.com/armanincredible/Computational-Mathematics/blob/master/accuracy/pics/pic5.png" width="450" alt="">
 </div>
 
 __Объясним факт того, что кривая съехала влево__: <br/>
 Из теории вычислитной математики, несложно сделать вывод, что значение $h$ при котором погрешность становится минимальной пропорциональна $M_0 ^ {1 \over k}$,
 где $k$ - степень остатка в ряде Тейлора и $M_0 = max_x|f(x)|$. Итак:
 + при увеличении значений функции увеличивается и $h$
-+ при уменьшении $n$ - порядка численного дифференцирования $h$ увеличивается <br/>
++ при увеличении $ln(h)$ увеличивается и $h$<br/>
 
 Именно это мы и видим на графиках. Ведь синус ограниченная функция, и при нашем $x = 10$ точно меньше чем степенная функция. Аналогичные рассуждения для других функций.
 
