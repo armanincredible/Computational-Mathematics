@@ -1,5 +1,6 @@
 import math
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 import accuracy as acc
 import functions as fcs
@@ -31,15 +32,20 @@ def get_dependency(approx_derivative, derivative, testing_function):
 
 def get_depend_n_plt_it(approx_derivative, derivative, testing_function, iteration):
     x, y = get_dependency(approx_derivative, derivative, testing_function)
-    plt.plot(x, y, label = "approx function " + str(iteration + 1))
+    ax.plot(x, y, 'D-', label = "approx function " + str(iteration + 1))
 
 print(get_delta_from_pow(MaxPowerOfDelta))
 for i in range(len(MainFunctions)):
-    plt.figure(figsize=(15, 15))
+    sns.set(style='darkgrid')
+    fig, ax = plt.subplots(figsize=(15, 15))
     main_func = MainFunctions[i]
     for j in range(len(ApproxDerivativeFunctions)):
         get_depend_n_plt_it(ApproxDerivativeFunctions[j], MainDerivativeFunctions[i], MainFunctions[i], j)
     #plt.title(label = "main function " + str(i + 1), fontsize=40, loc='right')
-    plt.legend()
-    plt.title("look at function " + str(i + 1))
+    ax.legend()
+    ax.minorticks_on()
+    ax.grid(which='minor', linestyle='-')
+    ax.set_title("look at function " + str(i + 1), fontsize=20)
+    ax.set_xlabel('log(h)', fontsize=20)
+    ax.set_ylabel('log(abs)', fontsize=20)
     plt.show()
