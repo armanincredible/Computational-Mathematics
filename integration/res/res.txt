@@ -1,0 +1,11 @@
+Richardson     : 1.6054185833333332
+Simpson        : 1.6054185833333332
+Simpson (ref)  : 1.6054185833333332
+Trapezoid      : 1.6031443749999998
+Trapezoid (ref): 1.6031443749999998
+Now splines:
+Richardson     : -0.0124519101447591
+Simpson        : -0.012451910144759104
+Simpson (ref)  : -0.012451910144758958
+Trapezoid      : -0.012391281115098721
+Trapezoid (ref): -0.012391281115098619
