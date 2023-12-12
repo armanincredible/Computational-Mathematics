@@ -39,7 +39,6 @@ def solve_tridiagonal(matrix, vector):
     right_side = vector.copy()
 
     for i in range(1, dimension):
-        # lower_diag[i] -> lower_diag[i - 1], because the algorithm starts counting 'lower_diag' from 2
         w = lower_diag[i-1] / main_diag[i-1]
         main_diag[i] -= w * upper_diag[i-1]
         right_side[i] -= w * right_side[i-1]
