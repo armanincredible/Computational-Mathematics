@@ -62,12 +62,12 @@ def gear_method(step_size, t, state_vector, diff_function):
 
 t_step, solution_vec = util.solve_differential_equation(0.01, 0, 800, np.array([4, 1.1, 4]), system_equation, gear_method)
 
-figure = plt.figure(figsize=(16, 7), facecolor='#F5F5F5')
+figure = plt.figure(figsize=(16, 7))
 axes = figure.add_subplot(1, 1, 1)
 
 axes.xaxis.set_major_locator(plt.MaxNLocator(10))
 axes.minorticks_on()
-axes.grid(which='major', linewidth=2, color='#919191')
+axes.grid(which='major', linewidth=2)
 axes.grid(which='minor', linestyle=':')
 
 x1_values = np.array([solution_vec[i][0] for i in range(np.shape(solution_vec)[0])])
